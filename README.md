@@ -21,3 +21,29 @@ pip install requirements.txt
 ```bash
 streamlit run app.py
 ```
+
+## Images of Application
+
+### Seasonal Flavors Form
+
+![flavors](image/form_flavor.jpg)
+
+### Inventory Form
+
+![inventory](image/form_inventory.jpg)
+
+### Customer Suggestions Form
+
+![customers_suggestions](image/form_suggestions.jpg)
+
+### Seasonal Flavors
+
+![flavors](image/flavor.jpg)
+
+### Inventory
+
+![Inventory](image/inventory.jpg)
+
+### Customer Suggestion
+
+![Suggestion](image/suggestion.jpg)
