@@ -32,10 +32,7 @@ def main():
 
                     submit_button = st.form_submit_button("Submit Update")
                     if submit_button:
-                        update_Ingredients(
-                            ingreadient[0], name, quantity, unit, expiry_date,
-                            cost_per_unit, storage_conditions_str
-                        )
+                        update_Ingredients(ingreadient[0], name, quantity, unit, expiry_date,cost_per_unit, storage_conditions_str)
                         st.success("Ingredient updated successfully!")
 
             if st.button(f"Delete {ingreadient[1]}"):

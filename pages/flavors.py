@@ -48,10 +48,7 @@ def main():
 
                     submit_button = st.form_submit_button("Submit Update")
                     if submit_button:
-                        update_SeasonalFlavor(
-                            flavor[0], name, description, flavor_profile_str, main_ingredient,
-                            dietary_restriction_str, price, start_date, end_date, in_stock, rating
-                        )
+                        update_SeasonalFlavor(flavor[0], name, description, flavor_profile_str, main_ingredient,dietary_restriction_str, price, start_date, end_date, in_stock, rating)
                         st.success("Flavor updated successfully!")
 
             if st.button(f"Delete {flavor[1]}"):

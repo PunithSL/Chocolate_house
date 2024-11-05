@@ -4,7 +4,7 @@ import datetime
 from src.db_manager import add_CustomerSuggestions,get_CustomerSuggestions,update_CustomerSuggestions,delete_CustomerSuggestions
 
 def main():
-    st.header("Seasonal Flavors")
+    st.header("Customer Suggestion Flavors")
     suggestions = get_CustomerSuggestions()
     if suggestions:
         for suggestion in suggestions:
@@ -43,10 +43,7 @@ def main():
                     submit_button = st.form_submit_button("Submit Update")
 
                     if submit_button:
-                        update_CustomerSuggestions(
-                            suggestion[0],customername, name, description, flavor_profile_str, main_ingredient,
-                            dietary_restriction_str, allergy_concerns_str, avoidance_suggestions, submission_date
-                        )
+                        update_CustomerSuggestions(customername, name, description,flavor_profile_str, main_ingredient,dietary_restriction_str, allergy_concerns_str, avoidance_suggestions, submission_date)
                         st.success("Suggestion updated successfully!")
 
             if st.button(f"Delete {suggestion[1]}"):
