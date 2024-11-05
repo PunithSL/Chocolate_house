@@ -22,6 +22,20 @@ pip install requirements.txt
 streamlit run app.py
 ```
 
+### Docker
+
+#### Build Docker Image
+
+```bash
+docker build -t my-streamlit-app .
+```
+
+#### Run the Docker Container
+
+```bash
+docker run -p 8501:8501 my-streamlit-app
+```
+
 ## Images of Application
 
 ### Seasonal Flavors Form
