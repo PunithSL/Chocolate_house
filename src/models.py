@@ -7,6 +7,21 @@ def create_tables():
     try:
         conn = connect_db()
         cursor = conn.cursor()
+        
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS CustomerSuggestions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            customer_name TEXT,
+            flavor_suggestion TEXT UNIQUE,
+            flavor_description TEXT,
+            flavor_profile TEXT NOT NULL,
+            main_ingredient TEXT NOT NULL,
+            dietary_restriction TEXT,
+            allergy_concerns TEXT,
+            avoidance_suggestions TEXT,
+            submission_date DATE
+        );
+    """)
 
 
         cursor.execute("""
@@ -34,21 +49,6 @@ def create_tables():
                     expiry_date DATE,
                     cost_per_unit REAL,
                     storage_condition TEXT
-            );
-        """)
-
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS CustomerSuggestions  (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    customer_name TEXT,
-                    flavor_suggestion UNIQUE TEXT<
-                    flavor_description TEXT,
-                    flavor_profile TEXT NOT NULL,
-                    main_ingredient TEXT NOT NULL,
-                    dietary_restriction TEXT,
-                    allergy_concerns TEXT,
-                    avoidance_suggestions TEXT,
-                    submission_date DATE
             );
         """)
     except:

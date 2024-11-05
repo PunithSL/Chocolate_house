@@ -5,7 +5,7 @@ def add_SeasonalFlavor(name,description,flavor_profile,main_ingredient,dietary_r
     conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
+    cursor.execute("""
         INSERT INTO SeasonalFlavors (name,description,flavor_profile,main_ingredient,dietary_restriction,price,start_date,end_date,in_stock,rating) VALUES (?,?,?,?,?,?,?,?,?,?)
 """,(name,description,flavor_profile,main_ingredient,dietary_restriction,price,start_date,end_date,in_stock,rating))
     conn.commit()
@@ -16,7 +16,7 @@ def get_SeasonalFlavor():
     conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
+    cursor.execute("""
     SELECT * FROM SeasonalFlavors
 """)
     flavor = cursor.fetchall()
@@ -28,8 +28,8 @@ def add_Ingredients(name,quantity,unit,expiry_date,cost_per_unit,storage_conditi
     conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
-        INSERT INTO Ingredients (name,quantity,unit,expiry_date,cost_per_unit,storage_condition) VALUES (?,?,?,?,?,?,)
+    cursor.execute("""
+        INSERT INTO Ingredients (name,quantity,unit,expiry_date,cost_per_unit,storage_condition) VALUES (?,?,?,?,?,?)
 """,(name,quantity,unit,expiry_date,cost_per_unit,storage_condition))
     conn.commit()
     conn.close()
@@ -38,7 +38,7 @@ def get_Ingredients():
     conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
+    cursor.execute("""
     SELECT * FROM Ingredients
 """)
     ingredients = cursor.fetchall()
@@ -46,12 +46,12 @@ def get_Ingredients():
     return ingredients
 
 def add_CustomerSuggestions(customer_name,flavor_suggestion,flavor_description,flavor_profile,main_ingredient,dietary_restriction,allergy_concerns,avoidance_suggestions,submission_date):
-    conn = connect_db
+    conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
-        INSERT INTO CustomerSuggestions (customer_name,flavor_suggestion,flavor_description,flavor_profile,main_ingredient,dietary_restriction,allergy_concerns,avoidance_suggestions,submission_date) VALUES (?,?,?,?,?,?,?,?,?))
-""")
+    cursor.execute("""
+        INSERT INTO CustomerSuggestions (customer_name,flavor_suggestion,flavor_description,flavor_profile,main_ingredient,dietary_restriction,allergy_concerns,avoidance_suggestions,submission_date) VALUES (?,?,?,?,?,?,?,?,?)
+""",(customer_name,flavor_suggestion,flavor_description,flavor_profile,main_ingredient,dietary_restriction,allergy_concerns,avoidance_suggestions,submission_date))
     conn.commit()
     conn.close()
 
@@ -59,7 +59,7 @@ def get_CustomerSuggestions():
     conn = connect_db()
     cursor = conn.cursor()
 
-    cursor.execute(f"""
+    cursor.execute("""
     SELECT * FROM CustomerSuggestions
 """)
     suggestions = cursor.fetchall()
