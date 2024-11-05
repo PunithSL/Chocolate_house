@@ -19,9 +19,9 @@ elif(form_page =="Inventory"):
 elif(form_page =="Customer Suggestions"):
     main_suggestions()
 elif(form_page =="Form SeasonalFlavor"):
-    main_form_flavors
+    main_form_flavors()
 elif(form_page =="Form Inventory"):
-    main_form_inventory
+    main_form_inventory()
 elif(form_page =="Form Customer Suggestions"):
     main_form_suggestions()
 else:
